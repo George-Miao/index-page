@@ -1,13 +1,94 @@
-body {
+body,
+#root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  touch-action: manipulation;
+  --white: #eceff4;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (max-width: 599px) {
+  html {
+    --stroke: 2px #eceff4;
+  }
+  .big-o-name.inactive {
+    line-height: 1.1;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    --stroke: min(0.3vw, 3.2px) #eceff4;
+  }
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.vanta-container {
+  height: 100vh;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-o-name {
+  color: var(--white);
+  cursor: pointer;
+  position: relative;
+  z-index: 114514;
+  font-family: axia;
+  font-style: italic;
+  font-weight: 900;
+  font-size: calc(min(max(6vw, 40px), 80px) + 10px);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+}
+
+.big-o-name.active {
+  font-size: calc(min(max(12vw, 60px), 160px) + 10px);
+  touch-action: none;
+  pointer-events: none;
+  color: var(--white);
+  -webkit-text-fill-color: var(--white);
+  text-fill-color: var(--white);
+  /* line-height: 1; */
+}
+
+.big-o-name.inactive {
+  text-stroke: var(--stroke);
+  -webkit-text-stroke: var(--stroke);
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 3px;
+}
+
+.big-o-name.inactive:hover {
+  color: var(--white);
+  text-fill-color: var(--white);
+  -webkit-text-fill-color: var(--white);
+  letter-spacing: 10px;
+}
+
+main {
+  background-color: #2e3440;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100%;
 }
