@@ -46,7 +46,7 @@ const Main: FunctionComponent = () => {
       <BigOText text="blog" href="https://blog.miao.dev" />
       <BigOText text="miao.dev" href="https://miao.dev" active />
       <BigOText text="github" href="https://github.com/George-Miao" />
-      <BigOText text="twitter" href="https://twitter.com/PopDotLol" />
+      <BigOText text="projects" href="" />
     </main>
   )
 }
