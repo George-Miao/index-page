@@ -22,7 +22,7 @@ body,
 
 @media screen and (min-width: 600px) {
   html {
-    --stroke: min(0.3vw, 3.2px) #eceff4;
+    --stroke: min(0.25vw, 3.2px) #eceff4;
   }
 }
 

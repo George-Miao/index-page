@@ -3,10 +3,10 @@ import Vanta from 'vanta/dist/vanta.waves.min'
 import { useAsync } from 'react-use'
 import * as THREE from 'three'
 
-const BigOText: FunctionComponent<{
-  text: string
+const BigOText: FunctionComponent<{ 
+text: string
   href: string
-  active?: boolean
+  active?: boolean 
 }> = props => {
   const className = 'big-o-name' + (props.active ? ' active' : ' inactive')
   return (
