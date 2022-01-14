@@ -3,14 +3,15 @@ import Vanta from 'vanta/dist/vanta.waves.min'
 import { useAsync } from 'react-use'
 import * as THREE from 'three'
 
-const BigOText: FunctionComponent<{ 
-text: string
+const BigOText: FunctionComponent<{
+  text: string
   href: string
-  active?: boolean 
+  major?: boolean
 }> = props => {
-  const className = 'big-o-name' + (props.active ? ' active' : ' inactive')
   return (
-    <a className={className} href={props.href}>
+    <a
+      className={`big-o-name ${props.major ? ' active' : ' inactive'}`}
+      href={props.href}>
       {props.text}
     </a>
   )
@@ -33,7 +34,6 @@ const Main: FunctionComponent = () => {
         gyroControls: false,
         scale: 1,
         scaleMobile: 1,
-        backgroundColor: 0x2e3440,
         color: 0x2e3440, // #2e3440
         spacing: 2,
         chaos: 0.7
@@ -44,9 +44,9 @@ const Main: FunctionComponent = () => {
       <div className="vanta-container" ref={vantaRef}></div>
       <BigOText text="about" href="https://blog.miao.dev/about" />
       <BigOText text="blog" href="https://blog.miao.dev" />
-      <BigOText text="miao.dev" href="https://miao.dev" active />
+      <BigOText text="miao.dev" href="https://miao.dev" major />
       <BigOText text="github" href="https://github.com/George-Miao" />
-      <BigOText text="projects" href="" />
+      <BigOText text="projects" href="https://proj.miao.dev" />
     </main>
   )
 }
